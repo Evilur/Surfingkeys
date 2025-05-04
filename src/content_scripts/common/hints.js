@@ -165,33 +165,27 @@ function createHints(insert, normal, clipboard) {
 div {
     position: absolute;
     display: block;
-    font-size: 8pt;
-    font-weight: bold;
-    padding: 0px 2px 0px 2px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785), color-stop(100%,#FFC542));
-    color: #000;
-    border: solid 1px #C38A22;
-    border-radius: 3px;
-    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.3);
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15.25px;
+    color: #f8f8f2;
+    background: #282a36;
+    border: solid 2px #44475a;
+    border-radius: 5px;
+    padding: 0 0.3em 0.05em;
+    user-select: none;
+    letter-spacing: 1px;
     width: auto;
+    height: auto;
+    box-shadow: 1px 1px 10px 2px #0005;
+}
+div > span {
+    opacity: 1 !important;
+    color: #6272a4 !important;
 }
 div:empty {
     display: none;
-}
-[mode=text] div {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaa), color-stop(100%,#fff));
-}
-div.hint-scrollable {
-    background: rgba(170, 170, 255, 0.85);
-}
-[mode=text] div.begin {
-    color: #00f;
-}
-[mode=input] mask {
-    background: rgba(255, 217, 0, 0.25);
-}
-[mode=input] mask.activeInput {
-    background: rgba(0, 0, 255, 0.25);
 }`);
     /* When the <style> loaded, set host's height */
     hintsStyle.onload = () =>
