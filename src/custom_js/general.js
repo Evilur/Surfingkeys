@@ -1,1 +1,5 @@
-export default { }
+import YouTube from './youtube'
+
+export default {
+    YouTube
+}
