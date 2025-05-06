@@ -250,6 +250,8 @@ const api = {
     },
 };
 
+CustomJS.Remap.init(api);
+
 export default (extensionRootUrl, uf) => {
     EXTENSION_ROOT_URL = extensionRootUrl;
     if (isInUIFrame()) return;
