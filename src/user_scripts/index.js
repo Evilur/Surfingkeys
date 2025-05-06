@@ -1,4 +1,4 @@
-import CustomJS from '../custom_js/general.js';
+import CustomJS from '../custom_js/export.js';
 import { RUNTIME, dispatchSKEvent } from '../content_scripts/common/runtime.js';
 import {
     aceVimMap,
