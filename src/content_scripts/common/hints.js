@@ -169,9 +169,9 @@ div {
     font-weight: 600;
     font-style: normal;
     font-size: 15.25px;
-    color: #f8f8f2;
-    background: #282a36;
-    border: solid 2px #44475a;
+    color: var(--sk-foreground);
+    background: var(--sk-background);
+    border: solid 2px var(--sk-selection);
     border-radius: 5px;
     padding: 0 0.3em 0.05em;
     user-select: none;
@@ -182,7 +182,7 @@ div {
 }
 div > span {
     opacity: 1 !important;
-    color: #6272a4 !important;
+    color: var(--sk-comment) !important;
 }
 div:empty {
     display: none;
