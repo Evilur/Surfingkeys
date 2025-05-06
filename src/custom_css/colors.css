@@ -1,10 +1,12 @@
-html {
+:root {
     --sk-foreground: #f8f8f2;
     --sk-background: #282a36;
     --sk-selection:  #44475a;
     --sk-comment:    #6272a4;
     --sk-red:        #ff4064;
-    --sk-blue:       #5389fc;
+    --sk-yellow:     #fdd835;
     --sk-green:      #23e863;
-    --sk-purple:     #cd29ff;
+    --sk-cyan:       #00d0ff;
+    --sk-blue:       #0070ff;
+    --sk-pink:       #cd29ff;
 }
