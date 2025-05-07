@@ -29,7 +29,6 @@ body > div {
     position: fixed !important;
     background-color: var(--sk-background) !important;
 }
-
 #sk_status, #sk_popup, #sk_banner {
     font-size: 20px !important;
     padding: 0 0.3em 0.1em !important;
