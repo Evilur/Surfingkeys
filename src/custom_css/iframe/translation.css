@@ -1,0 +1,42 @@
+#sk_translation {
+    font-size: 16px !important;
+}
+#sk_translation * {
+    user-select: text !important;
+}
+#sk_translation .light,
+#sk_translation .light * {
+    color: var(--sk-cyan) !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+}
+#sk_translation td:has(> [name]) {
+    border-top: 1px var(--sk-selection) solid !important;
+}
+#sk_translation td:has(> [name])::first-letter {
+    text-transform: uppercase;
+}
+#sk_translation td:has(> [name]) :not(.light):not(:first-child) {
+    display: inline;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    padding-right: 5px !important;
+}
+#sk_translation td:has(>b) {
+    border-top: 1px var(--sk-selection) solid !important;
+}
+#sk_translation b {
+    font-size: 22px !important;
+}
+#sk_translation .subj {
+    text-transform: capitalize !important;
+}
+#sk_translation .trans {
+    padding-left: 50px !important;
+}
+#sk_translation .trans::first-letter {
+    text-transform: uppercase !important;
+}
+#sk_translation .small {
+    display: none !important;
+}
