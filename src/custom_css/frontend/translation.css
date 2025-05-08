@@ -1,33 +1,23 @@
+/* Setting the parent element */
+li:has(>#sk_translation) {
+    font-size: 0 !important;
+    display: block !important;
+    cursor: auto !important;
+}
+li:has(>#sk_translation):hover,
+li:has(>#sk_translation).focused {
+    background-color: transparent !important;
+}
+
+/* General */
 #sk_translation {
     font-size: 16px !important;
 }
 #sk_translation * {
     user-select: text !important;
 }
-#sk_translation .light,
-#sk_translation .light * {
-    color: var(--sk-cyan) !important;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-}
-#sk_translation td:has(> [name]) {
-    border-top: 1px var(--sk-selection) solid !important;
-}
-#sk_translation td:has(> [name])::first-letter {
-    text-transform: uppercase;
-}
-#sk_translation td:has(> [name]) :not(.light):not(:first-child) {
-    display: inline;
-    font-size: 22px !important;
-    font-weight: 800 !important;
-    padding-right: 5px !important;
-}
-#sk_translation td:has(>b) {
-    border-top: 1px var(--sk-selection) solid !important;
-}
-#sk_translation b {
-    font-size: 22px !important;
-}
+
+/* Table settings */
 #sk_translation .subj {
     text-transform: capitalize !important;
 }
@@ -39,4 +29,42 @@
 }
 #sk_translation .small {
     display: none !important;
+}
+
+/* Light */
+#sk_translation [style],
+#sk_translation [style] * {
+    color: var(--sk-cyan) !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+}
+
+/* Headers */
+#sk_translation > table:has(h1) {
+    margin-top: -7px !important;
+}
+#sk_translation tr:not(:first-child) table td:has([name]) {
+    border-top: 1px var(--sk-selection) solid !important;
+}
+#sk_translation tr:not(:first-child) table:has(td [name]) {
+    padding-top: 5px !important;
+}
+#sk_translation *:has(>[name])::first-letter {
+    text-transform: uppercase;
+}
+#sk_translation *:has(>[name]) *:not([style]):not([name]),
+#sk_translation b {
+    display: inline !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    padding-right: 5px !important;
+    color: var(--sk-green) !important;
+}
+
+/* Thesaurus */
+#sk_translation td:has(>b) {
+    font-size: 0 !important;
+}
+#sk_translation td:has(>b) * {
+    color: var(--sk-purple) !important;
 }
