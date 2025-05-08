@@ -78,12 +78,7 @@
     cursor: pointer !important;
     max-height: none !important;
 }
-#sk_omnibarSearchResult li:has(#sk_translation) {
-    font-size: 0 !important;
-    display: block !important;
-    cursor: auto !important;
-}
-#sk_omnibarSearchResult li:not(:has(#sk_translation)):hover,
+#sk_omnibarSearchResult li:hover,
 #sk_omnibarSearchResult .focused {
     background-color: var(--sk-selection) !important;
 }
