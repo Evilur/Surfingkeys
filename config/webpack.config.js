@@ -100,10 +100,10 @@ module.exports = (env, argv) => {
     const module1Plugins = [
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/custom_css/iframe', to: 'css' },
-                { from: 'src/custom_css/colors.css', to: 'css' },
-                { from: 'src/custom_css/iframe.css', to: 'css' },
-                { from: 'src/custom_css/master_body', to: 'css' },
+                { from: 'src/custom_css/:root', to: 'css' },
+                { from: 'src/custom_css/frontend', to: 'css' },
+                { from: 'src/custom_css/:root.css', to: 'css' },
+                { from: 'src/custom_css/frontend.css', to: 'css' },
                 { from: 'src/pages', to: 'pages', globOptions: pagesCopyOptions },
                 { from: 'src/content_scripts/ui/frontend.html', to: 'pages' },
                 { from: 'src/content_scripts/ui/frontend.css', to: 'pages' },
