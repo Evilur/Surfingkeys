@@ -1,3 +1,4 @@
+@import url(css/:root.css);
 div.surfingkeys_hints_host {
     display: block;
     opacity: 1;
