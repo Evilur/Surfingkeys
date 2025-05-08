@@ -29,7 +29,22 @@ body > div {
     position: fixed !important;
     background-color: var(--sk-background) !important;
 }
+
+/* Small popups */
 #sk_status, #sk_popup, #sk_banner {
     font-size: 20px !important;
     padding: 0 0.3em 0.1em !important;
+}
+
+/* Scrollbar */
+body ::-webkit-scrollbar {
+    background-color: transparent !important;
+    width: 10px !important;
+}
+body ::-webkit-scrollbar-thumb {
+    background-color: var(--sk-comment) !important;
+    border-radius: 10px !important;
+}
+body ::-webkit-scrollbar-track {
+    background-color: transparent !important;
 }
