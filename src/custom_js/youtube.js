@@ -14,6 +14,11 @@ export default class YouTube {
         document.querySelector('#movie_player .ytp-fullscreen-button').click();
     }
 
+    /* Enter wide/normal mode */
+    toggleWideMode() {
+        document.querySelector('#movie_player .ytp-size-button').click();
+    }
+
     /* Set the playback rate to the value */
     setRate(rate) {
         /* Get the index of such a rate value */
