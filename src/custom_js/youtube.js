@@ -1,18 +1,6 @@
 export default class YouTube {
-    /* The fullscreen button DOM object */
-    #fs_button;
-
-    /* The hint root DOM object */
-    #hint_root;
-
-    /* The hint text DOM object */
-    #hint_text;
-
     /* The timer to hide the hint DOM object */
     #timer;
-
-    /* The video player DOM object */
-    #player;
 
     /* Available rates */
     #rates = [ 0.1, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75,
@@ -23,9 +11,7 @@ export default class YouTube {
 
     /* Enter/exit the fullscreen mode */
     enterFullscreen() {
-        if (!this.#fs_button) this.#fs_button =
-            document.querySelector('#movie_player .ytp-fullscreen-button');
-        this.#fs_button.click();
+        document.querySelector('#movie_player .ytp-fullscreen-button').click();
     }
 
     /* Set the playback rate to the value */
@@ -60,25 +46,22 @@ export default class YouTube {
         clearTimeout(this.#timer);
 
         /* Set the playback rate */
-        if (!this.#player) this.#player = document
-            .querySelector('video.html5-main-video');
-        this.#player.playbackRate = rate;
+        document.querySelector('video.html5-main-video').playbackRate = rate;
         
         /* Get the hint's DOM objects */
-        if (!this.#hint_root) this.#hint_root = document
-                .querySelector('#movie_player .ytp-bezel-text-wrapper')
-                .parentNode;
-        if (!this.#hint_text) this.#hint_text =
-            this.#hint_root.querySelector('.ytp-bezel-text');
+        const hint_root = document
+            .querySelector('#movie_player .ytp-bezel-text-wrapper')
+            .parentNode;
+        const hint_text = hint_root.querySelector('.ytp-bezel-text');
 
         /* Set params to the root hint DOM object */        
         const set_hint_params = (css, cl) => {
-            this.#hint_root.style.cssText = css;
-            this.#hint_root.className = cl;
+            hint_root.style.cssText = css;
+            hint_root.className = cl;
         };
 
         /* Show the hint */
-        this.#hint_text.innerHTML = `${rate}x`;
+        hint_text.innerHTML = `${rate}x`;
         set_hint_params('', '');
 
         /* Set the timer to hide the hint */
