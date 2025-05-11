@@ -1,3 +1,4 @@
+import api from './api';
 export default class YouTube {
     /* The timer to hide the hint DOM object */
     #timer;
@@ -11,7 +12,7 @@ export default class YouTube {
 
     /* Enter/exit the fullscreen mode */
     enterFullscreen() {
-        document.querySelector('#movie_player .ytp-fullscreen-button').click();
+        api.InjectJS('youtube/toggle_fullscreen');
     }
 
     /* Enter wide/normal mode */
