@@ -136,6 +136,12 @@ function createCssSelectorForElements(cssSelector, elements) {
 
 const api = {
     CustomJS,
+    InjectJS: (file) => {
+        const script = document.createElement('script');
+        script.src = EXTENSION_ROOT_URL + 'js/' + file + '.js';
+        script.onload = () => script.remove();
+        document.body.appendChild(script);
+    },
     RUNTIME,
     aceVimMap,
     addVimMapKey,
