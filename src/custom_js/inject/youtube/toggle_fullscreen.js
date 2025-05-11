@@ -1,0 +1,1 @@
+document.getElementById('movie_player').toggleFullscreen();
