@@ -136,11 +136,18 @@ function createCssSelectorForElements(cssSelector, elements) {
 
 const api = {
     CustomJS,
-    InjectJS: (file) => {
+    injectJS: (file) => {
         const script = document.createElement('script');
         script.src = EXTENSION_ROOT_URL + 'js/' + file + '.js';
         script.onload = () => script.remove();
         document.body.appendChild(script);
+    },
+    postMessage: (action, args) => {
+        window.postMessage({
+            target: 'SK_POST',
+            action,
+            args
+        }, window.location.origin);
     },
     RUNTIME,
     aceVimMap,
