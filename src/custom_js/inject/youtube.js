@@ -29,6 +29,11 @@ class SKYouTube {
         document.querySelector('#movie_player .ytp-size-button').click();
     }
 
+    /* Like the video */
+    static like() {
+        document.querySelector('.ytLikeButtonViewModelHost button').click();
+    }
+
     /* Get the current rate index of #rates array */
     static #getRateIndex(rate) {
         const index = SKYouTube.#rates.indexOf(rate);
