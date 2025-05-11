@@ -4,7 +4,7 @@ class SKYouTube {
 
     /* Available rates */
     static #rates = [
-        0.05, 0.1, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75,
+        0.1, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75,
         2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 10, 12.5, 15
     ];
 
@@ -38,6 +38,37 @@ class SKYouTube {
     /* Set the playback rate */
     static setRate(rate) {
         SKYouTube.#video.playbackRate = rate;
+        SKYouTube.#showHint(`${rate}x`);
+    }
+
+    /* Decrease the playback rate */
+    static decreaseRate() {
+        /* Get the index of the current rate */
+        const player = SKYouTube.#video;
+        let index = SKYouTube.#getRateIndex(player.playbackRate);
+
+        /* Check for index out of range */
+        if (--index < 0) index = 0;
+
+        /* Set the playback rate to the DOM object */
+        const rate = SKYouTube.#rates[index];
+        player.playbackRate = rate;
+        SKYouTube.#showHint(`${rate}x`);
+    }
+
+    /* Increase the playback rate */
+    static increaseRate() {
+        /* Get the index of the current rate */
+        const player = SKYouTube.#video;
+        let index = SKYouTube.#getRateIndex(player.playbackRate);
+
+        /* Check for index out of range */
+        if (++index >= SKYouTube.#rates.length)
+            index = SKYouTube.#rates.length - 1;
+
+        /* Set the playback rate to the DOM object */
+        const rate = SKYouTube.#rates[index];
+        player.playbackRate = rate;
         SKYouTube.#showHint(`${rate}x`);
     }
 
