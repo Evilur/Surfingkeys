@@ -71,14 +71,6 @@
         }
     ],
     "web_accessible_resources": [
-        "pages/neovim.html",
-        "pages/default.js",
-        "pages/emoji.tsv",
-        "pages/l10n.json",
-        "pages/frontend.html",
-        "pages/pdf_viewer.html",
-        "pages/shadow.css",
-        "pages/default.css"
     ],
     "content_security_policy": "script-src 'self'; object-src 'self'"
 }

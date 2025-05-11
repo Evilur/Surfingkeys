@@ -45,6 +45,7 @@ function modifyManifest(browser, mode, buffer) {
                 "extension_ids": ["*"],
                 "resources": [
                     "_favicon/*",
+                    "js/*",
                     "api.js",
                     "pages/neovim.html",
                     "pages/default.js",
@@ -100,6 +101,7 @@ module.exports = (env, argv) => {
     const module1Plugins = [
         new CopyWebpackPlugin({
             patterns: [
+                { from: 'src/custom_js/inject', to: 'js' },
                 { from: 'src/custom_css/:root', to: 'css' },
                 { from: 'src/custom_css/frontend', to: 'css' },
                 { from: 'src/custom_css/:root.css', to: 'css' },
