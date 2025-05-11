@@ -142,7 +142,7 @@ const api = {
         script.onload = () => script.remove();
         document.body.appendChild(script);
     },
-    postMessage: (action, args) => {
+    postMessage: (action, ...args) => {
         window.postMessage({
             target: 'SK_POST',
             action,
