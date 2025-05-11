@@ -42,29 +42,26 @@ class SKYouTube {
     }
 
     /* Decrease the playback rate */
-    static decreaseRate() {
-        /* Get the index of the current rate */
-        const player = SKYouTube.#video;
-        let index = SKYouTube.#getRateIndex(player.playbackRate);
-
-        /* Check for index out of range */
-        if (--index < 0) index = 0;
-
-        /* Set the playback rate to the DOM object */
-        const rate = SKYouTube.#rates[index];
-        player.playbackRate = rate;
-        SKYouTube.#showHint(`${rate}x`);
-    }
+    static decreaseRate() { SKYouTube.#changeRate('decrease'); }
 
     /* Increase the playback rate */
-    static increaseRate() {
-        /* Get the index of the current rate */
+    static increaseRate() { SKYouTube.#changeRate('increase'); }
+
+    /** (De/In)crease playback rate
+     * state: 'increase' or 'decrease'
+     */
+    static #changeRate(state) {
+         /* Get the index of the current rate */
         const player = SKYouTube.#video;
         let index = SKYouTube.#getRateIndex(player.playbackRate);
 
-        /* Check for index out of range */
-        if (++index >= SKYouTube.#rates.length)
-            index = SKYouTube.#rates.length - 1;
+        /* Change index and check it for out of range */
+        if (state === 'decrease') {
+            if (--index < 0) index = 0;
+        } else if (state == 'increase') {
+            if (++index >= SKYouTube.#rates.length)
+                index = SKYouTube.#rates.length - 1;
+        } else return;
 
         /* Set the playback rate to the DOM object */
         const rate = SKYouTube.#rates[index];
@@ -81,7 +78,48 @@ class SKYouTube {
         const quality_data = player.getAvailableQualityData()[0];
 
         /* Set the quality to the player */
-        movie_player.setPlaybackQualityRange(quality_data.quality);
+        player.setPlaybackQualityRange(quality_data.quality);
+
+        /* Show the hint */
+        SKYouTube.#showHint(quality_data.qualityLabel);
+    }
+
+    /* Decrease the video quality */
+    static decreaseQuality() { SKYouTube.#changeQuality('decrease'); }
+
+    /* Increase the video quality */
+    static increaseQuality() { SKYouTube.#changeQuality('increase'); }
+
+    /** (De/In)crease the video quality
+     * state: 'increase' or 'decrease'
+     */
+    static #changeQuality(state) {
+        /* Get the player object */
+        const player = SKYouTube.#player;
+
+        /* Get the current quality */
+        const current_quality = player.getPlaybackQuality();
+
+        /* Get available track quality */
+        const available_quality = player.getAvailableQualityData();
+
+        /* Get the index of out current quality */
+        let index = available_quality.findIndex(quality =>
+            quality.quality == current_quality);
+
+        /* Change index and check it for out of range */
+        if (state === 'decrease') {
+            if (++index >= available_quality.length)
+                index = available_quality.length - 1;
+        } else if (state === 'increase') {
+            if (--index < 0) index = 0;
+        } else return;
+
+        /* Get the next quality */
+        const quality_data = available_quality[index];
+
+        /* Set the quality to the player */
+        player.setPlaybackQualityRange(quality_data.quality);
 
         /* Show the hint */
         SKYouTube.#showHint(quality_data.qualityLabel);
