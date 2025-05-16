@@ -2,7 +2,7 @@
 #sk_usage {
     display: flex;
     flex-wrap: wrap !important;
-    gap: 4px;
+    gap: 4px !important;
     border-radius: 10px !important;
     background-color: var(--sk-selection) !important;
 }
@@ -36,6 +36,7 @@
 }
 #sk_usage .feature_name * {
     font-size: 20px !important;
+    font-weight: 600 !important;
 }
 
 /* More Help */

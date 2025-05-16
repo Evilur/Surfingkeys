@@ -56,7 +56,7 @@ li:has(>#sk_translation).focused {
 #sk_translation b {
     display: inline !important;
     font-size: 22px !important;
-    font-weight: 800 !important;
+    font-weight: 600 !important;
     padding-right: 5px !important;
     color: var(--sk-green) !important;
 }

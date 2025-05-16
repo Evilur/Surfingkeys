@@ -3,9 +3,6 @@
     border-bottom: 0 !important;
     right: 15px !important;
 }
-#sk_keystroke:not(.expandRichHints) {
-    padding: 0 0.3em 0.1em !important;
-}
 #sk_keystroke > div {
     margin: 5px 12px 5px 0 !important;
 }
