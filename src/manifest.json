@@ -64,7 +64,9 @@
             "css": [
                 "content.css",
                 "css/colors.css",
-                "css/frame.css"
+                "css/cursor.css",
+                "css/frame.css",
+                "css/selection.css"
             ],
             "run_at": "document_start",
             "all_frames": true
