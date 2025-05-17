@@ -187,6 +187,10 @@ div > span {
 div:empty {
     display: none;
 }`);
+    hintsStyle.onload = () => {
+        const height = window.scrollY + window.innerHeight;
+        hintsHost.style.height = `${height}px`;
+    }
     hintsHost.shadowRoot.appendChild(hintsStyle);
     const regionalHints = createRegionalHints(clipboard);
 

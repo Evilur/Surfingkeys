@@ -66,6 +66,7 @@
                 "css/colors.css",
                 "css/cursor.css",
                 "css/frame.css",
+                "css/hints_host.css",
                 "css/selection.css"
             ],
             "run_at": "document_start",
