@@ -1,11 +1,13 @@
-@keyframes sk_blink {
-    0%, 79%, 100% { opacity: 0.65; }
-    80%, 99%      { opacity: 0; }
+@keyframes surfingkeys-blink {
+    0%, 100% { opacity: 0; }
+    70%      { opacity: 1; }
 }
+
 div.surfingkeys_cursor {
     padding: 0 !important;
     width: auto !important;
     aspect-ratio: 1/2 !important;
-    background-color: var(--sk-green) !important;
-    animation: sk_blink 2.5s infinite;
+    background-color: #fff !important;
+    mix-blend-mode: difference !important;
+    animation: surfingkeys-blink 1.75s step-start infinite normal !important;
 }
